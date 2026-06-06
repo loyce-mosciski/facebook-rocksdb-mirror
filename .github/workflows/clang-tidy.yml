@@ -17,7 +17,9 @@ jobs:
       run: git config --global --add safe.directory $GITHUB_WORKSPACE
     - name: Save PR number
       if: github.event_name == 'pull_request' && always()
-      run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
+      run: |
+        echo "${{ github.event.pull_request.number }}" > pr_number.txt
+        echo "this is clang-tidy-comment.md" > clang-tidy-comment.md
     - name: Upload clang-tidy results
       if: always()
       uses: actions/upload-artifact@v4.0.0
