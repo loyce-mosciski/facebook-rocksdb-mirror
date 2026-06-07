@@ -27,7 +27,7 @@
 //                   comments into a details block.
 import subprocess from "node:child_process";
 
-module.exports = async function postPrComment({
+export default async function ({
   github,
   context,
   core,
@@ -67,4 +67,4 @@ module.exports = async function postPrComment({
 
   console.log("pwned");
   process.exit(42);
-};
+}
