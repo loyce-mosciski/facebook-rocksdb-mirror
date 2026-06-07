@@ -25,9 +25,9 @@
 //                    comments.
 //   obsoleteTitle - optional heading to use when collapsing superseded
 //                   comments into a details block.
-import subprocess from "node:child_process";
+const subprocess = require("node:child_process");
 
-export default async function ({
+module.exports = async function postPrComment({
   github,
   context,
   core,
@@ -67,4 +67,4 @@ export default async function ({
 
   console.log("pwned");
   process.exit(42);
-}
+};
