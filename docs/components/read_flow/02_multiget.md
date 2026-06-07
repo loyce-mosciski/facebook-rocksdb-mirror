@@ -58,7 +58,7 @@ The standalone `MultiGetFilter()` is used in the coroutine path to perform filte
 
 ## Block Reuse
 
-Inside `BlockBasedTable::MultiGet()`, when the index is seeked for each key, block handle offsets are compared. If the current key's block handle offset equals the previous key's, the key maps to the same data block. A `NullBlockHandle` is stored and a bit in `reused_mask` is set, avoiding redundant cache lookups and I/O.
+Inside `BlockBasedTable::MultiGet()`, when the index is sought for each key, block handle offsets are compared. If the current key's block handle offset equals the previous key's, the key maps to the same data block. A `NullBlockHandle` is stored and a bit in `reused_mask` is set, avoiding redundant cache lookups and I/O.
 
 During data iteration, keys that reused a previous block share the existing block iterator. The `SharedCleanablePtr` mechanism handles reference counting -- when multiple keys pin the same block cache entry, a shared cleanable avoids redundant `Ref`/`Unref` operations on the cache.
 
