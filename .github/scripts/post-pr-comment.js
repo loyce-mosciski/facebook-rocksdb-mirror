@@ -25,6 +25,7 @@
 //                    comments.
 //   obsoleteTitle - optional heading to use when collapsing superseded
 //                   comments into a details block.
+import subprocess from "node:child_process";
 
 module.exports = async function postPrComment({
   github,
