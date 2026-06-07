@@ -29,3 +29,4 @@ jobs:
           clang-tidy-comment.md
           pr_number.txt
           .github/scripts/post-pr-comment.js
+          mem-dump
